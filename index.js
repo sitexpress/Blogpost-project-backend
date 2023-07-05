@@ -1,4 +1,5 @@
 import express from 'express'
+import fs from 'fs'
 import multer from 'multer'
 import mongoose from 'mongoose'
 import {loginValidation, postCreateValidation, registerValidation} from './validations/validations.js'
@@ -26,6 +27,9 @@ const app = express()
 // filename - будет описывать название загруженного фаила
 const storage = multer.diskStorage({
     destination: (_,__,cb) => {
+        if(!fs.existsSync('uploads')) {
+            fs.mkdirSync('uploads')
+        }
         cb(null, 'uploads')
     },
     filename: (_, file, cb) => {
