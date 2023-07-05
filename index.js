@@ -5,7 +5,7 @@ import {loginValidation, postCreateValidation, registerValidation} from './valid
 import {UserController, PostController} from './controllers/index.js'
 import {handleValidationErrors, checkAuth} from "./utils/index.js";
 import cors from "cors";
-import {mongoDbEnv} from "./env/env.js";
+// import {mongoDbEnv} from "./env/env.js";
 
 
 mongoose
