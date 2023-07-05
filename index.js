@@ -9,7 +9,8 @@ import {mongoDbEnv} from "./env/env.js";
 
 
 mongoose
-    .connect(mongoDbEnv ? process.env.MONGODB_URI || mongoDbEnv : process.env.MONGODB_URI)
+    // .connect(process.env.MONGODB_URI || mongoDbEnv)
+    .connect(process.env.MONGODB_URI)
     .then(() => console.log('DB ok'))
     .catch((err) => console.log('DB error', err))
 
