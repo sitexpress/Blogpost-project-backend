@@ -57,7 +57,7 @@ app.get('/auth/me', checkAuth, UserController.getMe)
 // upload.single('image') - middleWare из библиотеки multer, из-за
 // этого мы можем стучаться req.file.originalname
 // Images
-app.post('/uploads',checkAuth, upload.single('image'), (req, res) => {
+app.post('/upload',checkAuth, upload.single('image'), (req, res) => {
     res.json({
         url: `/uploads/${req.file.originalname}`
     })
